@@ -1,0 +1,13 @@
+<div class="d-flex flex-column vh-100">
+  <div class="m-1 justify-content-center row">
+    <label>
+      Artist:
+      <input type="text" placeholder="Enter at least three symbols" [formControl]="albumControl">
+    </label>
+  </div>
+  <div class="m-1 d-flex flex-fill overflow-hidden row ">
+    <app-list-of-albums *ngFor="let listOfAlbums of this.apiService.albumsInterfaces"
+                        [inputInterface]="listOfAlbums" [artist]="artist">
+    </app-list-of-albums>
+  </div>
+</div>
